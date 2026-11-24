@@ -111,7 +111,7 @@ export const ProductList: React.FC<ProductListProps> = ({
     <div className="space-y-6">
       {/* Top Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
+        <div className="rounded-2xl border border-pink-200/60 bg-white/75 px-5 py-4 backdrop-blur-sm shadow-xs">
           <div className="flex items-center gap-2">
             <h1 className="text-2xl font-bold tracking-tight text-stone-900">
               Controle de Estoque & Localização
@@ -120,7 +120,7 @@ export const ProductList: React.FC<ProductListProps> = ({
               Mapeamento Físico
             </span>
           </div>
-          <p className="text-sm text-stone-600 mt-0.5">
+          <p className="mt-1 text-sm font-medium text-zinc-800">
             Saiba instantaneamente onde cada peça está guardada na casa (Box da cama, caixas organizadoras).
           </p>
         </div>
@@ -149,7 +149,7 @@ export const ProductList: React.FC<ProductListProps> = ({
       {/* Carrossel / Cards de Locais Físicos */}
       <div>
         <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-stone-500">
+          <span className="text-xs font-semibold uppercase tracking-wider text-zinc-700">
             Filtrar por Local de Armazenamento na Casa
           </span>
           {selectedLocationId !== 'all' && (
