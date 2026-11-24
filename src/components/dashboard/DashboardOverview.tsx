@@ -62,7 +62,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
             <h1 className="mt-2 text-2xl font-black tracking-tight text-stone-900 md:text-3xl">
               Olá, Jú! Bem-vinda ao seu sistema.
             </h1>
-            <p className="mt-1 text-sm text-stone-600 max-w-xl">
+            <p className="mt-1 text-sm font-medium text-zinc-800 max-w-xl">
               Aqui está o resumo das suas sacolinhas em andamento, localização do estoque residencial e saúde financeira do brechó.
             </p>
           </div>

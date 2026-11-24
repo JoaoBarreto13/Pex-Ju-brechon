@@ -43,7 +43,7 @@ export const FinancialSummary: React.FC<FinancialSummaryProps> = ({
     <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
+        <div className="rounded-2xl border border-pink-200/60 bg-white/75 px-5 py-4 backdrop-blur-sm shadow-xs">
           <div className="flex items-center gap-2">
             <h1 className="text-2xl font-bold tracking-tight text-stone-900">
               Controle Financeiro
@@ -52,7 +52,7 @@ export const FinancialSummary: React.FC<FinancialSummaryProps> = ({
               Gestão Simplificada
             </span>
           </div>
-          <p className="text-sm text-stone-600 mt-0.5">
+          <p className="mt-1 text-sm font-medium text-zinc-800">
             Acompanhe o faturamento com vendas de sacolinhas, despesas operacionais e a meta mensal.
           </p>
         </div>
@@ -210,7 +210,7 @@ export const FinancialSummary: React.FC<FinancialSummaryProps> = ({
             className={`border-b-2 px-4 py-2.5 text-xs font-bold transition ${
               activeSubTab === 'sales'
                 ? 'border-pink-500 text-pink-800'
-                : 'border-transparent text-stone-500 hover:text-stone-800'
+                : 'border-transparent text-zinc-700 hover:text-stone-900'
             }`}
           >
             Histórico de Vendas ({sales.length})
@@ -220,7 +220,7 @@ export const FinancialSummary: React.FC<FinancialSummaryProps> = ({
             className={`border-b-2 px-4 py-2.5 text-xs font-bold transition ${
               activeSubTab === 'expenses'
                 ? 'border-rose-500 text-rose-700'
-                : 'border-transparent text-stone-500 hover:text-stone-800'
+                : 'border-transparent text-zinc-700 hover:text-stone-900'
             }`}
           >
             Histórico de Despesas ({expenses.length})

@@ -32,7 +32,7 @@ export const PollList: React.FC<PollListProps> = ({ polls, onRefresh }) => {
     <div className="space-y-6">
       {/* Top Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
+        <div className="rounded-2xl border border-pink-200/60 bg-white/75 px-5 py-4 backdrop-blur-sm shadow-xs">
           <div className="flex items-center gap-2">
             <h1 className="text-2xl font-bold tracking-tight text-stone-900">
               Engajamento nas Redes Sociais
@@ -41,7 +41,7 @@ export const PollList: React.FC<PollListProps> = ({ polls, onRefresh }) => {
               Taxa de Participação
             </span>
           </div>
-          <p className="text-sm text-stone-600 mt-0.5">
+          <p className="mt-1 text-sm font-medium text-zinc-800">
             Compare o engajamento das enquetes no Instagram para entender a aceitação dos drops e produtos.
           </p>
         </div>

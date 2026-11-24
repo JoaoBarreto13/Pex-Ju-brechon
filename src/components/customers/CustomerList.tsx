@@ -45,7 +45,7 @@ export const CustomerList: React.FC<CustomerListProps> = ({
     <div className="space-y-6">
       {/* Top Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
+        <div className="rounded-2xl border border-pink-200/60 bg-white/75 px-5 py-4 backdrop-blur-sm shadow-xs">
           <div className="flex items-center gap-2">
             <h1 className="text-2xl font-bold tracking-tight text-stone-900">
               Cadastro de Clientes
@@ -54,7 +54,7 @@ export const CustomerList: React.FC<CustomerListProps> = ({
               {customers.length} cadastradas
             </span>
           </div>
-          <p className="text-sm text-stone-600 mt-0.5">
+          <p className="mt-1 text-sm font-medium text-zinc-800">
             Gerencie contatos, perfis do Instagram e histórico de sacolinhas.
           </p>
         </div>

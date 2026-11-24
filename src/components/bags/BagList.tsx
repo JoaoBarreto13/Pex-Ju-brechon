@@ -59,7 +59,7 @@ export const BagList: React.FC<BagListProps> = ({
     <div className="space-y-6">
       {/* Top Banner & Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
+        <div className="rounded-2xl border border-pink-200/60 bg-white/75 px-5 py-4 backdrop-blur-sm shadow-xs">
           <div className="flex items-center gap-2">
             <h1 className="text-2xl font-bold tracking-tight text-stone-900">
               Controle de Sacolinhas
@@ -68,7 +68,7 @@ export const BagList: React.FC<BagListProps> = ({
               Prazo de 30 dias
             </span>
           </div>
-          <p className="text-sm text-stone-600 mt-0.5">
+          <p className="mt-1 text-sm font-medium text-zinc-800">
             Gerencie o acúmulo de compras das clientes e acompanhe as datas limite de envio para economia no frete.
           </p>
         </div>
