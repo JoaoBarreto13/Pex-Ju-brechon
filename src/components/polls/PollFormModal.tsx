@@ -65,21 +65,21 @@ export const PollFormModal: React.FC<PollFormModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-stone-900/50 p-4 backdrop-blur-xs">
-      <div className="w-full max-w-md rounded-2xl bg-white shadow-xl border border-stone-200 overflow-hidden">
-        <div className="flex items-center justify-between border-b border-stone-100 px-6 py-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-xs">
+      <div className="w-full max-w-md rounded-2xl bg-white dark:bg-zinc-900 shadow-xl border border-stone-200 dark:border-zinc-800 overflow-hidden">
+        <div className="flex items-center justify-between border-b border-stone-100 dark:border-zinc-800 px-6 py-4">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-pink-500 text-white">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-pink-500 text-white shadow-sm">
               <BarChart3 className="h-5 w-5" />
             </div>
             <div>
-              <h2 className="font-bold text-stone-900">Registrar Enquete do Instagram</h2>
-              <p className="text-xs text-stone-500">Métricas de participação dos seguidores</p>
+              <h2 className="font-bold text-stone-900 dark:text-zinc-100">Registrar Enquete do Instagram</h2>
+              <p className="text-xs text-stone-500 dark:text-zinc-400">Métricas de participação dos seguidores</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="rounded-lg p-1.5 text-stone-400 hover:bg-stone-100 hover:text-stone-700"
+            className="rounded-lg p-1.5 text-stone-400 hover:bg-stone-100 dark:hover:bg-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200"
           >
             <X className="h-5 w-5" />
           </button>
@@ -87,45 +87,45 @@ export const PollFormModal: React.FC<PollFormModalProps> = ({
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           {errorMessage && (
-            <div className="rounded-xl bg-rose-50 p-3 text-xs font-semibold text-rose-700 border border-rose-200">
+            <div className="rounded-xl bg-rose-50 dark:bg-rose-950/40 p-3 text-xs font-semibold text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-900/50">
               {errorMessage}
             </div>
           )}
 
           <div>
-            <label className="text-xs font-semibold text-stone-700">Tema da Enquete / Stories *</label>
+            <label className="text-xs font-semibold text-stone-700 dark:text-zinc-300">Tema da Enquete / Stories *</label>
             <input
               type="text"
               placeholder="Ex: Qual tamanho abrir no drop de amanhã? P, M ou G?"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2.5 text-sm text-stone-800 focus:border-pink-500 focus:outline-hidden"
+              className="mt-1 w-full rounded-xl border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-800/80 px-3.5 py-2.5 text-sm text-stone-800 dark:text-zinc-100 placeholder:text-stone-400 dark:placeholder:text-zinc-500 focus:border-pink-500 focus:outline-hidden"
               required
             />
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="text-xs font-semibold text-stone-700">Visualizações dos Stories *</label>
+              <label className="text-xs font-semibold text-stone-700 dark:text-zinc-300">Visualizações dos Stories *</label>
               <input
                 type="number"
                 min="1"
                 placeholder="Ex: 600"
                 value={views}
                 onChange={(e) => setViews(e.target.value)}
-                className="mt-1 w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-800 focus:border-pink-500 focus:outline-hidden"
+                className="mt-1 w-full rounded-xl border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-800/80 px-3.5 py-2 text-sm text-stone-800 dark:text-zinc-100 placeholder:text-stone-400 dark:placeholder:text-zinc-500 focus:border-pink-500 focus:outline-hidden"
                 required
               />
             </div>
             <div>
-              <label className="text-xs font-semibold text-stone-700">Quantidade de Votos *</label>
+              <label className="text-xs font-semibold text-stone-700 dark:text-zinc-300">Quantidade de Votos *</label>
               <input
                 type="number"
                 min="0"
                 placeholder="Ex: 80"
                 value={votes}
                 onChange={(e) => setVotes(e.target.value)}
-                className="mt-1 w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2 text-sm text-stone-800 focus:border-pink-500 focus:outline-hidden"
+                className="mt-1 w-full rounded-xl border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-800/80 px-3.5 py-2 text-sm text-stone-800 dark:text-zinc-100 placeholder:text-stone-400 dark:placeholder:text-zinc-500 focus:border-pink-500 focus:outline-hidden"
                 required
               />
             </div>
@@ -133,23 +133,23 @@ export const PollFormModal: React.FC<PollFormModalProps> = ({
 
           {/* Prévia automática do cálculo */}
           {calculatedRate !== null && (
-            <div className="flex items-center justify-between rounded-xl bg-pink-50 p-3.5 border border-pink-200">
-              <div className="flex items-center gap-2 text-xs font-bold text-pink-900">
-                <Calculator className="h-4 w-4 text-pink-600" />
+            <div className="flex items-center justify-between rounded-xl bg-pink-50 dark:bg-pink-950/30 p-3.5 border border-pink-200 dark:border-pink-500/20">
+              <div className="flex items-center gap-2 text-xs font-bold text-pink-900 dark:text-pink-200">
+                <Calculator className="h-4 w-4 text-pink-600 dark:text-pink-400" />
                 <span>Taxa de Participação Calculada:</span>
               </div>
-              <span className="text-lg font-extrabold text-pink-800">{calculatedRate}%</span>
+              <span className="text-lg font-extrabold text-pink-800 dark:text-pink-300">{calculatedRate}%</span>
             </div>
           )}
 
           <div>
-            <label className="text-xs font-semibold text-stone-700">Conclusão / Preferência observada</label>
+            <label className="text-xs font-semibold text-stone-700 dark:text-zinc-300">Conclusão / Preferência observada</label>
             <textarea
               rows={2}
               placeholder="Ex: Tamanho M teve 60% de preferência, focar na reposição desse tamanho."
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-stone-300 bg-white p-3 text-xs text-stone-800 focus:border-pink-500 focus:outline-hidden"
+              className="mt-1 w-full rounded-xl border border-stone-300 dark:border-zinc-700 bg-white dark:bg-zinc-800/80 p-3 text-xs text-stone-800 dark:text-zinc-100 placeholder:text-stone-400 dark:placeholder:text-zinc-500 focus:border-pink-500 focus:outline-hidden"
             />
           </div>
 
@@ -157,7 +157,7 @@ export const PollFormModal: React.FC<PollFormModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="rounded-xl px-4 py-2 text-sm font-medium text-stone-600 hover:bg-stone-100"
+              className="rounded-xl px-4 py-2 text-sm font-medium text-stone-600 dark:text-zinc-400 hover:bg-stone-100 dark:hover:bg-zinc-800"
             >
               Cancelar
             </button>

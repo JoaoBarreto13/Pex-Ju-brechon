@@ -57,33 +57,33 @@ export const PollList: React.FC<PollListProps> = ({ polls, onRefresh }) => {
 
       {/* KPI Card de Engajamento */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-xs">
-          <div className="flex items-center justify-between text-xs font-semibold text-stone-500 uppercase tracking-wider">
+        <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-xs dark:border-zinc-800 dark:bg-zinc-900/90">
+          <div className="flex items-center justify-between text-xs font-semibold text-stone-500 dark:text-zinc-400 uppercase tracking-wider">
             <span>Enquetes Analisadas</span>
             <BarChart3 className="h-4 w-4 text-pink-500" />
           </div>
-          <div className="mt-2 text-2xl font-extrabold text-stone-900">{polls.length}</div>
+          <div className="mt-2 text-2xl font-extrabold text-stone-900 dark:text-zinc-100">{polls.length}</div>
         </div>
 
-        <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-xs">
-          <div className="flex items-center justify-between text-xs font-semibold text-stone-500 uppercase tracking-wider">
+        <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-xs dark:border-zinc-800 dark:bg-zinc-900/90">
+          <div className="flex items-center justify-between text-xs font-semibold text-stone-500 dark:text-zinc-400 uppercase tracking-wider">
             <span>Média de Participação</span>
             <Percent className="h-4 w-4 text-emerald-500" />
           </div>
-          <div className="mt-2 text-2xl font-extrabold text-emerald-700">
+          <div className="mt-2 text-2xl font-extrabold text-emerald-700 dark:text-emerald-400">
             {averageParticipation}%
           </div>
-          <div className="mt-1 text-xs text-stone-500">Votos / Visualizações</div>
+          <div className="mt-1 text-xs text-stone-500 dark:text-zinc-400">Votos / Visualizações</div>
         </div>
 
-        <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-xs">
-          <div className="flex items-center justify-between text-xs font-semibold text-stone-500 uppercase tracking-wider">
+        <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-xs dark:border-zinc-800 dark:bg-zinc-900/90">
+          <div className="flex items-center justify-between text-xs font-semibold text-stone-500 dark:text-zinc-400 uppercase tracking-wider">
             <span>Fórmula Aplicada</span>
-            <span className="text-[10px] bg-stone-100 rounded px-1.5 py-0.5 font-bold text-stone-600">
+            <span className="text-[10px] bg-stone-100 dark:bg-zinc-800 rounded px-1.5 py-0.5 font-bold text-stone-600 dark:text-zinc-300">
               Automática
             </span>
           </div>
-          <div className="mt-2 text-xs font-mono bg-stone-50 p-2 rounded-lg text-stone-700 border border-stone-200">
+          <div className="mt-2 text-xs font-mono bg-stone-50 dark:bg-zinc-850 p-2 rounded-lg text-stone-700 dark:text-zinc-300 border border-stone-200 dark:border-zinc-700">
             (Votos ÷ Visualizações) × 100
           </div>
         </div>
@@ -91,20 +91,20 @@ export const PollList: React.FC<PollListProps> = ({ polls, onRefresh }) => {
 
       {/* Tabela Comparativa de Enquetes */}
       {polls.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-stone-200 bg-white p-12 text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-pink-50 text-pink-500 mb-3">
+        <div className="rounded-2xl border border-dashed border-stone-200 bg-white p-12 text-center dark:border-zinc-800 dark:bg-zinc-900/90">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-pink-50 dark:bg-pink-950/40 text-pink-500 mb-3">
             <BarChart3 className="h-6 w-6" />
           </div>
-          <h3 className="font-bold text-stone-800 text-base">Nenhuma enquete registrada</h3>
-          <p className="mt-1 text-xs text-stone-500 max-w-sm mx-auto">
+          <h3 className="font-bold text-stone-800 dark:text-zinc-100 text-base">Nenhuma enquete registrada</h3>
+          <p className="mt-1 text-xs text-stone-500 dark:text-zinc-400 max-w-sm mx-auto">
             Lance as visualizações e votos de um story para calcular o engajamento do público.
           </p>
         </div>
       ) : (
-        <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-xs">
+        <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-xs dark:border-zinc-800 dark:bg-zinc-900/90">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold uppercase text-stone-500">
+              <thead className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold uppercase text-stone-500 dark:border-zinc-800 dark:bg-zinc-850/80 dark:text-zinc-400">
                 <tr>
                   <th className="px-4 py-3">Data</th>
                   <th className="px-4 py-3">Tema da Enquete</th>
@@ -115,40 +115,40 @@ export const PollList: React.FC<PollListProps> = ({ polls, onRefresh }) => {
                   <th className="px-3 py-3 text-right">Ação</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-stone-100">
+              <tbody className="divide-y divide-stone-100 dark:divide-zinc-800">
                 {polls.map((poll) => {
                   const rate =
                     poll.views > 0 ? ((poll.votes / poll.views) * 100).toFixed(1) : '0.0';
                   return (
-                    <tr key={poll.id} className="hover:bg-stone-50 transition">
-                      <td className="px-4 py-3 font-medium text-stone-500">
+                    <tr key={poll.id} className="hover:bg-stone-50 dark:hover:bg-zinc-800/50 transition">
+                      <td className="px-4 py-3 font-medium text-stone-500 dark:text-zinc-400">
                         {formatDateBR(poll.poll_date)}
                       </td>
-                      <td className="px-4 py-3 font-semibold text-stone-900">{poll.title}</td>
-                      <td className="px-3 py-3 text-center font-medium text-stone-600">
+                      <td className="px-4 py-3 font-semibold text-stone-900 dark:text-zinc-100">{poll.title}</td>
+                      <td className="px-3 py-3 text-center font-medium text-stone-600 dark:text-zinc-300">
                         <span className="inline-flex items-center gap-1">
-                          <Eye className="h-3 w-3 text-stone-400" />
+                          <Eye className="h-3 w-3 text-stone-400 dark:text-zinc-500" />
                           {poll.views}
                         </span>
                       </td>
-                      <td className="px-3 py-3 text-center font-medium text-stone-600">
+                      <td className="px-3 py-3 text-center font-medium text-stone-600 dark:text-zinc-300">
                         <span className="inline-flex items-center gap-1">
                           <ThumbsUp className="h-3 w-3 text-pink-500" />
                           {poll.votes}
                         </span>
                       </td>
                       <td className="px-4 py-3 text-center">
-                        <span className="inline-flex items-center rounded-full bg-pink-50 px-2.5 py-0.5 text-xs font-bold text-pink-900 border border-pink-200">
+                        <span className="inline-flex items-center rounded-full bg-pink-50 dark:bg-pink-950/40 px-2.5 py-0.5 text-xs font-bold text-pink-900 dark:text-pink-300 border border-pink-200 dark:border-pink-900/50">
                           {rate}%
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-stone-500 max-w-xs truncate">
+                      <td className="px-4 py-3 text-stone-500 dark:text-zinc-400 max-w-xs truncate">
                         {poll.notes || '-'}
                       </td>
                       <td className="px-3 py-3 text-right">
                         <button
                           onClick={() => handleDelete(poll.id)}
-                          className="rounded-lg p-1 text-stone-400 hover:bg-rose-50 hover:text-rose-600"
+                          className="rounded-lg p-1 text-stone-400 hover:bg-rose-50 hover:text-rose-600 dark:text-zinc-500 dark:hover:bg-rose-950/40 dark:hover:text-rose-400"
                           title="Excluir"
                         >
                           <Trash2 className="h-3.5 w-3.5" />

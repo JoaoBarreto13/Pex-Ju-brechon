@@ -111,16 +111,16 @@ export const ProductList: React.FC<ProductListProps> = ({
     <div className="space-y-6">
       {/* Top Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="rounded-2xl border border-pink-200/60 bg-white/75 px-5 py-4 backdrop-blur-sm shadow-xs">
+        <div className="rounded-2xl border border-pink-200/60 bg-white/75 px-5 py-4 backdrop-blur-sm shadow-xs dark:border-pink-500/20 dark:bg-zinc-900/80">
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl font-bold tracking-tight text-stone-900">
+            <h1 className="text-2xl font-bold tracking-tight text-stone-900 dark:text-zinc-100">
               Controle de Estoque & Localização
             </h1>
-            <span className="rounded-full bg-pink-100 px-2.5 py-0.5 text-xs font-semibold text-pink-800">
+            <span className="rounded-full bg-pink-100 px-2.5 py-0.5 text-xs font-semibold text-pink-800 dark:bg-pink-500/15 dark:border dark:border-pink-500/30 dark:text-pink-300">
               Mapeamento Físico
             </span>
           </div>
-          <p className="mt-1 text-sm font-medium text-zinc-800">
+          <p className="mt-1 text-sm font-medium text-zinc-800 dark:text-zinc-300">
             Saiba instantaneamente onde cada peça está guardada na casa (Box da cama, caixas organizadoras).
           </p>
         </div>
@@ -128,9 +128,9 @@ export const ProductList: React.FC<ProductListProps> = ({
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsLocationsModalOpen(true)}
-            className="inline-flex items-center gap-1.5 rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-stone-700 hover:bg-stone-50 shadow-xs"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-stone-700 hover:bg-stone-50 shadow-xs dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-750"
           >
-            <MapPin className="h-3.5 w-3.5 text-pink-600" />
+            <MapPin className="h-3.5 w-3.5 text-pink-600 dark:text-pink-400" />
             <span>Gerenciar Caixas/Locais</span>
           </button>
           <button
@@ -149,13 +149,13 @@ export const ProductList: React.FC<ProductListProps> = ({
       {/* Carrossel / Cards de Locais Físicos */}
       <div>
         <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-zinc-700">
+          <span className="text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300">
             Filtrar por Local de Armazenamento na Casa
           </span>
           {selectedLocationId !== 'all' && (
             <button
               onClick={() => setSelectedLocationId('all')}
-              className="text-xs font-semibold text-pink-600 hover:text-pink-700 underline"
+              className="text-xs font-semibold text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 underline"
             >
               Ver todos os locais
             </button>
@@ -167,12 +167,12 @@ export const ProductList: React.FC<ProductListProps> = ({
             onClick={() => setSelectedLocationId('all')}
             className={`flex flex-col rounded-xl border p-2.5 text-left transition ${
               selectedLocationId === 'all'
-                ? 'border-pink-500 bg-pink-50 shadow-xs'
-                : 'border-stone-200 bg-white hover:border-stone-300'
+                ? 'border-pink-500 bg-pink-50 shadow-xs dark:bg-pink-950/40 dark:border-pink-500/80'
+                : 'border-stone-200 bg-white hover:border-stone-300 dark:border-zinc-800 dark:bg-zinc-900/90 dark:hover:border-zinc-700'
             }`}
           >
-            <span className="text-xs font-bold text-stone-900 truncate">Todos os Locais</span>
-            <span className="text-[11px] text-stone-500 mt-0.5">
+            <span className="text-xs font-bold text-stone-900 dark:text-zinc-100 truncate">Todos os Locais</span>
+            <span className="text-[11px] text-stone-500 dark:text-zinc-400 mt-0.5">
               {products.filter((p) => p.status !== 'sold').length} ativas
             </span>
           </button>
@@ -183,30 +183,30 @@ export const ProductList: React.FC<ProductListProps> = ({
               onClick={() => setSelectedLocationId(location.id)}
               className={`flex flex-col rounded-xl border p-2.5 text-left transition ${
                 selectedLocationId === location.id
-                  ? 'border-pink-500 bg-pink-50 shadow-xs'
-                  : 'border-stone-200 bg-white hover:border-stone-300'
+                  ? 'border-pink-500 bg-pink-50 shadow-xs dark:bg-pink-950/40 dark:border-pink-500/80'
+                  : 'border-stone-200 bg-white hover:border-stone-300 dark:border-zinc-800 dark:bg-zinc-900/90 dark:hover:border-zinc-700'
               }`}
             >
               <div className="flex items-center justify-between gap-1">
-                <span className="text-xs font-bold text-stone-900 truncate">{location.name}</span>
-                <span className="rounded-full bg-stone-100 px-1.5 py-0.2 text-[10px] font-bold text-stone-600">
+                <span className="text-xs font-bold text-stone-900 dark:text-zinc-100 truncate">{location.name}</span>
+                <span className="rounded-full bg-stone-100 dark:bg-zinc-800 px-1.5 py-0.2 text-[10px] font-bold text-stone-600 dark:text-zinc-300">
                   {count}
                 </span>
               </div>
-              <span className="text-[10px] text-stone-500 truncate mt-0.5">{location.description}</span>
+              <span className="text-[10px] text-stone-500 dark:text-zinc-400 truncate mt-0.5">{location.description}</span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Filtros Secundários e Barra de Busca */}
-      <div className="flex flex-col gap-3 rounded-2xl border border-stone-200 bg-white p-3 shadow-xs sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 rounded-2xl border border-stone-200 bg-white p-3 shadow-xs sm:flex-row sm:items-center sm:justify-between dark:border-zinc-800 dark:bg-zinc-900/90">
         <div className="flex flex-wrap items-center gap-2">
           {/* Status */}
           <select
             value={selectedStatus}
             onChange={(e) => setSelectedStatus(e.target.value)}
-            className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-1.5 text-xs text-stone-800 focus:border-pink-500 focus:outline-hidden"
+            className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-1.5 text-xs text-stone-800 focus:border-pink-500 focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
           >
             <option value="all">Status: Todos</option>
             <option value="available">Disponíveis</option>
@@ -218,7 +218,7 @@ export const ProductList: React.FC<ProductListProps> = ({
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-1.5 text-xs text-stone-800 focus:border-pink-500 focus:outline-hidden"
+            className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-1.5 text-xs text-stone-800 focus:border-pink-500 focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
           >
             <option value="all">Categoria: Todas</option>
             <option value="Vestido">Vestidos</option>
@@ -234,35 +234,35 @@ export const ProductList: React.FC<ProductListProps> = ({
 
         {/* Busca por texto */}
         <div className="relative min-w-[220px]">
-          <Search className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-stone-400" />
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-stone-400 dark:text-zinc-500" />
           <input
             type="text"
             placeholder="Buscar peça, tamanho..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full rounded-xl border border-stone-200 bg-stone-50 pl-8.5 pr-3 py-1.5 text-xs text-stone-800 placeholder-stone-400 focus:border-pink-500 focus:bg-white focus:outline-hidden"
+            className="w-full rounded-xl border border-stone-200 bg-stone-50 pl-8.5 pr-3 py-1.5 text-xs text-stone-800 placeholder-stone-400 focus:border-pink-500 focus:bg-white focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-500 dark:focus:bg-zinc-850"
           />
         </div>
       </div>
 
       {/* Tabela de Produtos */}
       {filteredProducts.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-stone-200 bg-white p-12 text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-pink-50 text-pink-500 mb-3">
+        <div className="rounded-2xl border border-dashed border-stone-200 bg-white p-12 text-center dark:border-zinc-800 dark:bg-zinc-900/90">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-pink-50 dark:bg-pink-950/40 text-pink-500 mb-3">
             <Package className="h-6 w-6" />
           </div>
-          <h3 className="font-bold text-stone-800 text-base">Nenhuma peça encontrada</h3>
-          <p className="mt-1 text-xs text-stone-500 max-w-sm mx-auto">
+          <h3 className="font-bold text-stone-800 dark:text-zinc-100 text-base">Nenhuma peça encontrada</h3>
+          <p className="mt-1 text-xs text-stone-500 dark:text-zinc-400 max-w-sm mx-auto">
             {searchTerm || selectedLocationId !== 'all' || selectedStatus !== 'all'
               ? 'Tente alterar os filtros de busca ou localização física.'
               : 'Cadastre sua primeira peça com a caixa ou local onde ela está guardada.'}
           </p>
         </div>
       ) : (
-        <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-xs">
+        <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-xs dark:border-zinc-800 dark:bg-zinc-900/90">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold uppercase tracking-wider text-stone-600">
+              <thead className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold uppercase tracking-wider text-stone-600 dark:border-zinc-800 dark:bg-zinc-850/80 dark:text-zinc-400">
                 <tr>
                   <th className="px-4 py-3">Peça / Descrição</th>
                   <th className="px-3 py-3">Categoria</th>
@@ -273,21 +273,21 @@ export const ProductList: React.FC<ProductListProps> = ({
                   <th className="px-4 py-3 text-right">Ações</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-stone-100">
+              <tbody className="divide-y divide-stone-100 dark:divide-zinc-800">
                 {filteredProducts.map((p) => {
                   const loc = locationMap.get(p.storage_location_id);
                   return (
-                    <tr key={p.id} className="hover:bg-stone-50 transition">
+                    <tr key={p.id} className="hover:bg-stone-50 dark:hover:bg-zinc-800/50 transition">
                       <td className="px-4 py-3">
-                        <div className="font-semibold text-stone-900">{p.name}</div>
-                        {p.notes && <div className="text-[11px] text-stone-600 truncate max-w-xs">{p.notes}</div>}
+                        <div className="font-semibold text-stone-900 dark:text-zinc-100">{p.name}</div>
+                        {p.notes && <div className="text-[11px] text-stone-600 dark:text-zinc-400 truncate max-w-xs">{p.notes}</div>}
                       </td>
-                      <td className="px-3 py-3 text-stone-600">{p.category}</td>
-                      <td className="px-3 py-3 font-medium text-stone-700">{p.size}</td>
+                      <td className="px-3 py-3 text-stone-600 dark:text-zinc-300">{p.category}</td>
+                      <td className="px-3 py-3 font-medium text-stone-700 dark:text-zinc-200">{p.size}</td>
                       <td className="px-3 py-3">
                         <LocationBadge location={loc} />
                       </td>
-                      <td className="px-3 py-3 font-bold text-stone-900">
+                      <td className="px-3 py-3 font-bold text-stone-900 dark:text-zinc-100">
                         {formatCurrency(p.sale_price)}
                       </td>
                       <td className="px-3 py-3">{getStatusBadge(p.status)}</td>
@@ -298,14 +298,14 @@ export const ProductList: React.FC<ProductListProps> = ({
                               setProductToEdit(p);
                               setIsAddModalOpen(true);
                             }}
-                            className="rounded-lg p-1 text-stone-400 hover:bg-stone-100 hover:text-stone-700"
+                            className="rounded-lg p-1 text-stone-400 hover:bg-stone-100 hover:text-stone-700 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
                             title="Editar peça"
                           >
                             <Edit2 className="h-3.5 w-3.5" />
                           </button>
                           <button
                             onClick={() => handleDelete(p.id)}
-                            className="rounded-lg p-1 text-stone-400 hover:bg-rose-50 hover:text-rose-600"
+                            className="rounded-lg p-1 text-stone-400 hover:bg-rose-50 hover:text-rose-600 dark:text-zinc-500 dark:hover:bg-rose-950/40 dark:hover:text-rose-400"
                             title="Excluir peça"
                           >
                             <Trash2 className="h-3.5 w-3.5" />

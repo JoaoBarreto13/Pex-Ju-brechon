@@ -42,7 +42,7 @@ export function evaluateBagStatus(_openedAt: string, closingDate: string, manual
       status: 'shipped',
       daysRemaining: 0,
       label: 'Enviada à cliente',
-      badgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      badgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/60',
       dotColor: 'bg-emerald-500',
       urgencyLevel: 'completed',
     };
@@ -55,7 +55,7 @@ export function evaluateBagStatus(_openedAt: string, closingDate: string, manual
       status: 'closed',
       daysRemaining: Math.abs(daysRemaining),
       label: daysRemaining < 0 ? `Vencida (${Math.abs(daysRemaining)}d atrás)` : 'Fechada',
-      badgeClass: 'bg-rose-50 text-rose-700 border-rose-200',
+      badgeClass: 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-800/60',
       dotColor: 'bg-rose-500',
       urgencyLevel: 'critical',
     };
@@ -66,7 +66,7 @@ export function evaluateBagStatus(_openedAt: string, closingDate: string, manual
       status: 'closing_soon',
       daysRemaining: 0,
       label: 'Fecha hoje!',
-      badgeClass: 'bg-pink-100 text-pink-800 border-pink-300 font-semibold animate-pulse',
+      badgeClass: 'bg-pink-100 text-pink-800 border-pink-300 dark:bg-pink-950/60 dark:text-pink-200 dark:border-pink-800 font-semibold animate-pulse',
       dotColor: 'bg-pink-600',
       urgencyLevel: 'warning',
     };
@@ -77,7 +77,7 @@ export function evaluateBagStatus(_openedAt: string, closingDate: string, manual
       status: 'closing_soon',
       daysRemaining,
       label: `Fecha em ${daysRemaining} ${daysRemaining === 1 ? 'dia' : 'dias'}`,
-      badgeClass: 'bg-pink-50 text-pink-800 border-pink-200',
+      badgeClass: 'bg-pink-50 text-pink-800 border-pink-200 dark:bg-pink-950/40 dark:text-pink-300 dark:border-pink-800/60',
       dotColor: 'bg-pink-500',
       urgencyLevel: 'warning',
     };
@@ -87,7 +87,7 @@ export function evaluateBagStatus(_openedAt: string, closingDate: string, manual
     status: 'open',
     daysRemaining,
     label: `${daysRemaining} dias restantes`,
-    badgeClass: 'bg-sky-50 text-sky-700 border-sky-200',
+    badgeClass: 'bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/40 dark:text-sky-300 dark:border-sky-800/60',
     dotColor: 'bg-sky-500',
     urgencyLevel: 'normal',
   };

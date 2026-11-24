@@ -59,16 +59,16 @@ export const BagList: React.FC<BagListProps> = ({
     <div className="space-y-6">
       {/* Top Banner & Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="rounded-2xl border border-pink-200/60 bg-white/75 px-5 py-4 backdrop-blur-sm shadow-xs">
+        <div className="rounded-2xl border border-pink-200/60 bg-white/75 px-5 py-4 backdrop-blur-sm shadow-xs dark:border-pink-500/20 dark:bg-zinc-900/80">
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl font-bold tracking-tight text-stone-900">
+            <h1 className="text-2xl font-bold tracking-tight text-stone-900 dark:text-zinc-100">
               Controle de Sacolinhas
             </h1>
-            <span className="rounded-full bg-pink-100 px-2.5 py-0.5 text-xs font-semibold text-pink-800">
+            <span className="rounded-full bg-pink-100 px-2.5 py-0.5 text-xs font-semibold text-pink-800 dark:bg-pink-500/15 dark:border dark:border-pink-500/30 dark:text-pink-300">
               Prazo de 30 dias
             </span>
           </div>
-          <p className="mt-1 text-sm font-medium text-zinc-800">
+          <p className="mt-1 text-sm font-medium text-zinc-800 dark:text-zinc-300">
             Gerencie o acúmulo de compras das clientes e acompanhe as datas limite de envio para economia no frete.
           </p>
         </div>
@@ -83,7 +83,7 @@ export const BagList: React.FC<BagListProps> = ({
       </div>
 
       {/* Barra de Filtros e Busca */}
-      <div className="flex flex-col gap-3 rounded-2xl border border-stone-200 bg-white p-3 shadow-xs md:flex-row md:items-center md:justify-between">
+      <div className="flex flex-col gap-3 rounded-2xl border border-stone-200 bg-white p-3 shadow-xs md:flex-row md:items-center md:justify-between dark:border-zinc-800 dark:bg-zinc-900/90">
         {/* Abas */}
         <div className="flex flex-wrap items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
           <button
@@ -91,7 +91,7 @@ export const BagList: React.FC<BagListProps> = ({
             className={`rounded-xl px-3 py-1.5 text-xs font-semibold transition ${
               filter === 'all'
                 ? 'bg-pink-500 text-white shadow-xs'
-                : 'text-stone-600 hover:bg-stone-100'
+                : 'text-stone-600 hover:bg-stone-100 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200'
             }`}
           >
             Todas ({countAll})
@@ -101,7 +101,7 @@ export const BagList: React.FC<BagListProps> = ({
             className={`rounded-xl px-3 py-1.5 text-xs font-semibold transition ${
               filter === 'open'
                 ? 'bg-sky-600 text-white shadow-xs'
-                : 'text-stone-600 hover:bg-stone-100'
+                : 'text-stone-600 hover:bg-stone-100 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200'
             }`}
           >
             Em Aberto ({countOpen})
@@ -111,7 +111,7 @@ export const BagList: React.FC<BagListProps> = ({
             className={`rounded-xl px-3 py-1.5 text-xs font-semibold transition ${
               filter === 'closing_soon'
                 ? 'bg-pink-500 text-white shadow-xs'
-                : 'text-stone-600 hover:bg-stone-100'
+                : 'text-stone-600 hover:bg-stone-100 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200'
             }`}
           >
             A Vencer ({countClosingSoon})
@@ -121,7 +121,7 @@ export const BagList: React.FC<BagListProps> = ({
             className={`rounded-xl px-3 py-1.5 text-xs font-semibold transition ${
               filter === 'closed'
                 ? 'bg-rose-600 text-white shadow-xs'
-                : 'text-stone-600 hover:bg-stone-100'
+                : 'text-stone-600 hover:bg-stone-100 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200'
             }`}
           >
             Vencidas/Fechadas ({countClosed})
@@ -131,7 +131,7 @@ export const BagList: React.FC<BagListProps> = ({
             className={`rounded-xl px-3 py-1.5 text-xs font-semibold transition ${
               filter === 'shipped'
                 ? 'bg-emerald-600 text-white shadow-xs'
-                : 'text-stone-600 hover:bg-stone-100'
+                : 'text-stone-600 hover:bg-stone-100 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-200'
             }`}
           >
             Enviadas ({countShipped})
@@ -140,25 +140,25 @@ export const BagList: React.FC<BagListProps> = ({
 
         {/* Input de Busca */}
         <div className="relative min-w-[220px]">
-          <Search className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-stone-400" />
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-stone-400 dark:text-zinc-500" />
           <input
             type="text"
             placeholder="Buscar por cliente ou peça..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full rounded-xl border border-stone-200 bg-stone-50 pl-8.5 pr-3 py-1.5 text-xs text-stone-800 placeholder-stone-400 focus:border-pink-500 focus:bg-white focus:outline-hidden"
+            className="w-full rounded-xl border border-stone-200 bg-stone-50 pl-8.5 pr-3 py-1.5 text-xs text-stone-800 placeholder-stone-400 focus:border-pink-500 focus:bg-white focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-500 dark:focus:bg-zinc-850"
           />
         </div>
       </div>
 
       {/* Grid de Sacolinhas */}
       {filteredBags.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-stone-200 bg-white p-12 text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-pink-50 text-pink-500 mb-3">
+        <div className="rounded-2xl border border-dashed border-stone-200 bg-white p-12 text-center dark:border-zinc-800 dark:bg-zinc-900/90">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-pink-50 dark:bg-pink-950/40 text-pink-500 mb-3">
             <ShoppingBag className="h-6 w-6" />
           </div>
-          <h3 className="font-bold text-stone-800 text-base">Nenhuma sacolinha encontrada</h3>
-          <p className="mt-1 text-xs text-stone-500 max-w-sm mx-auto">
+          <h3 className="font-bold text-stone-800 dark:text-zinc-100 text-base">Nenhuma sacolinha encontrada</h3>
+          <p className="mt-1 text-xs text-stone-500 dark:text-zinc-400 max-w-sm mx-auto">
             {searchTerm
               ? 'Tente ajustar sua busca ou limpar os filtros.'
               : 'Abra uma nova sacolinha para uma cliente começar a acumular compras.'}

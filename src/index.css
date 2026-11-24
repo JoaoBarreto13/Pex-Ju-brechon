@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   body {
     @apply text-stone-800 antialiased min-h-screen font-sans;
@@ -32,6 +34,41 @@
         transparent 58px,
         rgba(219, 39, 119, 0.08) 58px,
         rgba(219, 39, 119, 0.08) 62px
+      );
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    color: #f4f4f5;
+    background-color: #0F0B0E;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 28px,
+        rgba(236, 72, 153, 0.08) 28px,
+        rgba(236, 72, 153, 0.08) 30px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 28px,
+        rgba(236, 72, 153, 0.08) 28px,
+        rgba(236, 72, 153, 0.08) 30px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 58px,
+        rgba(219, 39, 119, 0.05) 58px,
+        rgba(219, 39, 119, 0.05) 62px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 58px,
+        rgba(219, 39, 119, 0.05) 58px,
+        rgba(219, 39, 119, 0.05) 62px
       );
     background-attachment: fixed;
   }

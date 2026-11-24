@@ -84,27 +84,27 @@ export const Sidebar: React.FC<SidebarProps> = ({
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r border-stone-200 bg-white transition-transform duration-200 ease-in-out md:static md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r border-stone-200 bg-white transition-transform duration-200 ease-in-out dark:border-zinc-800/80 dark:bg-[#140e13]/95 md:static md:translate-x-0 ${
           isOpenMobile ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <div className="flex h-16 items-center justify-between border-b border-stone-200 px-6 md:hidden">
-          <span className="font-bold text-stone-900">Menu Principal</span>
+        <div className="flex h-16 items-center justify-between border-b border-stone-200 px-6 dark:border-zinc-800 md:hidden">
+          <span className="font-bold text-stone-900 dark:text-zinc-100">Menu Principal</span>
           <button
             onClick={onCloseMobile}
-            className="rounded-lg p-1.5 text-stone-500 hover:bg-stone-100"
+            className="rounded-lg p-1.5 text-stone-500 hover:bg-stone-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
         <div className="p-4">
-          <div className="rounded-xl bg-pink-50 p-3.5 border border-pink-100">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-pink-900">
-              <Clock className="h-3.5 w-3.5 text-pink-700" />
+          <div className="rounded-xl bg-pink-50 p-3.5 border border-pink-100 dark:bg-pink-950/30 dark:border-pink-900/40">
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-pink-900 dark:text-pink-300">
+              <Clock className="h-3.5 w-3.5 text-pink-700 dark:text-pink-400" />
               <span>Regra de Sacolinhas</span>
             </div>
-            <p className="mt-1.5 text-xs text-pink-800/90 leading-relaxed">
+            <p className="mt-1.5 text-xs text-pink-800/90 leading-relaxed dark:text-pink-200/80">
               Até <strong>30 dias</strong> para juntar compras e consolidar o envio do frete.
             </p>
           </div>
@@ -120,14 +120,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onClick={() => handleSelect(item.id)}
                 className={`group flex w-full items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-medium transition ${
                   isActive
-                    ? 'bg-pink-500 text-white shadow-sm shadow-pink-200'
-                    : 'text-stone-600 hover:bg-stone-100 hover:text-stone-900'
+                    ? 'bg-pink-500 text-white shadow-sm shadow-pink-200 dark:shadow-pink-950/40'
+                    : 'text-stone-600 hover:bg-stone-100 hover:text-stone-900 dark:text-zinc-300 dark:hover:bg-zinc-800/70 dark:hover:text-zinc-100'
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <Icon
                     className={`h-4.5 w-4.5 ${
-                      isActive ? 'text-white' : 'text-stone-400 group-hover:text-stone-700'
+                      isActive ? 'text-white' : 'text-stone-400 group-hover:text-stone-700 dark:text-zinc-500 dark:group-hover:text-zinc-300'
                     }`}
                   />
                   <span>{item.label}</span>
@@ -140,7 +140,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       className={`inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-2 py-0.5 text-xs font-bold ${
                         isActive
                           ? 'bg-pink-300 text-pink-950'
-                          : 'bg-pink-100 text-pink-800'
+                          : 'bg-pink-100 text-pink-800 dark:bg-pink-500/20 dark:text-pink-300'
                       }`}
                     >
                       <AlertTriangle className="h-3 w-3 shrink-0" />
@@ -152,7 +152,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       className={`shrink-0 whitespace-nowrap rounded-full px-2 py-0.5 text-xs font-semibold ${
                         isActive
                           ? 'bg-pink-600 text-pink-50'
-                          : 'bg-stone-100 text-stone-600'
+                          : 'bg-stone-100 text-stone-600 dark:bg-zinc-800 dark:text-zinc-300'
                       }`}
                     >
                       {item.badge}
@@ -164,9 +164,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
           })}
         </nav>
 
-        <div className="border-t border-stone-200 p-4">
-          <div className="text-xs text-stone-600 space-y-1">
-            <p className="font-semibold text-stone-700">Jú Brechó Online</p>
+        <div className="border-t border-stone-200 p-4 dark:border-zinc-800">
+          <div className="text-xs text-stone-600 dark:text-zinc-400 space-y-1">
+            <p className="font-semibold text-stone-700 dark:text-zinc-200">Jú Brechó Online</p>
             <p>Moda sustentável e circular</p>
           </div>
         </div>

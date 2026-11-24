@@ -20,28 +20,28 @@ export const LocationBadge: React.FC<LocationBadgeProps> = ({
     switch (type) {
       case 'box':
         return {
-          icon: <Bed className="h-3 w-3 text-indigo-600" />,
-          bg: 'bg-indigo-50 text-indigo-800 border-indigo-200',
+          icon: <Bed className="h-3 w-3 text-indigo-600 dark:text-indigo-400" />,
+          bg: 'bg-indigo-50 text-indigo-800 border-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:border-indigo-800/60',
         };
       case 'caixa_sapatos':
         return {
-          icon: <Footprints className="h-3 w-3 text-pink-700" />,
-          bg: 'bg-pink-50 text-pink-900 border-pink-200',
+          icon: <Footprints className="h-3 w-3 text-pink-700 dark:text-pink-400" />,
+          bg: 'bg-pink-50 text-pink-900 border-pink-200 dark:bg-pink-950/40 dark:text-pink-300 dark:border-pink-800/60',
         };
       case 'caixa_roupas':
         return {
-          icon: <Shirt className="h-3 w-3 text-pink-700" />,
-          bg: 'bg-pink-50 text-pink-900 border-pink-200',
+          icon: <Shirt className="h-3 w-3 text-pink-700 dark:text-pink-400" />,
+          bg: 'bg-pink-50 text-pink-900 border-pink-200 dark:bg-pink-950/40 dark:text-pink-300 dark:border-pink-800/60',
         };
       case 'arara':
         return {
-          icon: <Sparkles className="h-3 w-3 text-purple-700" />,
-          bg: 'bg-purple-50 text-purple-900 border-purple-200',
+          icon: <Sparkles className="h-3 w-3 text-purple-700 dark:text-purple-400" />,
+          bg: 'bg-purple-50 text-purple-900 border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800/60',
         };
       default:
         return {
-          icon: <Archive className="h-3 w-3 text-stone-600" />,
-          bg: 'bg-stone-100 text-stone-800 border-stone-200',
+          icon: <Archive className="h-3 w-3 text-stone-600 dark:text-zinc-400" />,
+          bg: 'bg-stone-100 text-stone-800 border-stone-200 dark:bg-zinc-800 dark:text-zinc-200 dark:border-zinc-700',
         };
     }
   };
