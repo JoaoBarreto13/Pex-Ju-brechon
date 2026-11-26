@@ -16,8 +16,9 @@ Sistema web moderno e responsivo desenvolvido sob medida para gestão de brechó
   - Acompanhamento do progresso da meta mensal de vendas.
 - **Engajamento & Enquetes:**
   - Registro de pesquisas e enquetes de interesse de público das redes sociais.
-- **Interface Intuitiva:**
+- **Interface Intuitiva & Temática:**
   - Design temático e responsivo inspirado na identidade visual da marca.
+  - Alternância de tema com suporte a **Modo Escuro (Dark Mode)** e **Modo Claro**, com persistência da preferência e fundo quadriculado exclusivo adaptado.
 
 ## 🚀 Tecnologias
 
