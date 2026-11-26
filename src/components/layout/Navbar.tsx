@@ -34,9 +34,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu }) => {
             className="h-9 w-9 rounded-full object-cover border border-pink-200 dark:border-pink-500/30 shadow-xs shrink-0"
           />
           <div>
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-stone-900 tracking-tight text-lg dark:text-zinc-100">Jú Brechó</span>
-              <span className="rounded-full bg-pink-100 px-2 py-0.5 text-xs font-medium text-pink-800 dark:bg-pink-500/15 dark:border dark:border-pink-500/30 dark:text-pink-300">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="font-bold text-stone-900 tracking-tight text-base sm:text-lg whitespace-nowrap dark:text-zinc-100">Jú Brechó</span>
+              <span className="rounded-full bg-pink-100 px-2 py-0.5 text-[11px] sm:text-xs font-medium text-pink-800 whitespace-nowrap dark:bg-pink-500/15 dark:border dark:border-pink-500/30 dark:text-pink-300">
                 Gestão Online
               </span>
             </div>

@@ -80,7 +80,7 @@ export const CustomerList: React.FC<CustomerListProps> = ({
             placeholder="Buscar por nome, WhatsApp ou @instagram..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full rounded-xl border border-stone-200 bg-stone-50 pl-9 pr-3 py-2 text-xs text-stone-800 placeholder-stone-400 focus:border-pink-500 focus:bg-white focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-500 dark:focus:bg-zinc-850"
+            className="w-full rounded-xl border border-stone-200 bg-stone-50 pl-9 pr-3 py-2 text-xs text-stone-800 placeholder-stone-400 focus:border-pink-500 focus:bg-white focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-500 dark:focus:bg-zinc-900"
           />
         </div>
       </div>
@@ -170,7 +170,7 @@ export const CustomerList: React.FC<CustomerListProps> = ({
                     )}
 
                     {customer.notes && (
-                      <p className="mt-2 text-stone-500 dark:text-zinc-400 italic bg-stone-50 dark:bg-zinc-850 p-2 rounded-lg text-[11px]">
+                      <p className="mt-2 text-stone-500 dark:text-zinc-400 italic bg-stone-50 dark:bg-zinc-800/70 p-2 rounded-lg text-[11px]">
                         "{customer.notes}"
                       </p>
                     )}

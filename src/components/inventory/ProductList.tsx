@@ -128,7 +128,7 @@ export const ProductList: React.FC<ProductListProps> = ({
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsLocationsModalOpen(true)}
-            className="inline-flex items-center gap-1.5 rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-stone-700 hover:bg-stone-50 shadow-xs dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-750"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-stone-700 hover:bg-stone-50 shadow-xs dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
           >
             <MapPin className="h-3.5 w-3.5 text-pink-600 dark:text-pink-400" />
             <span>Gerenciar Caixas/Locais</span>
@@ -240,7 +240,7 @@ export const ProductList: React.FC<ProductListProps> = ({
             placeholder="Buscar peça, tamanho..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full rounded-xl border border-stone-200 bg-stone-50 pl-8.5 pr-3 py-1.5 text-xs text-stone-800 placeholder-stone-400 focus:border-pink-500 focus:bg-white focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-500 dark:focus:bg-zinc-850"
+            className="w-full rounded-xl border border-stone-200 bg-stone-50 pl-8.5 pr-3 py-1.5 text-xs text-stone-800 placeholder-stone-400 focus:border-pink-500 focus:bg-white focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-500 dark:focus:bg-zinc-900"
           />
         </div>
       </div>
@@ -262,15 +262,15 @@ export const ProductList: React.FC<ProductListProps> = ({
         <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-xs dark:border-zinc-800 dark:bg-zinc-900/90">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold uppercase tracking-wider text-stone-600 dark:border-zinc-800 dark:bg-zinc-850/80 dark:text-zinc-400">
+              <thead className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold uppercase tracking-wider text-stone-600 dark:border-zinc-800 dark:bg-zinc-800/70 dark:text-zinc-400">
                 <tr>
-                  <th className="px-4 py-3">Peça / Descrição</th>
-                  <th className="px-3 py-3">Categoria</th>
-                  <th className="px-3 py-3">Tamanho</th>
-                  <th className="px-3 py-3">Localização Física</th>
-                  <th className="px-3 py-3">Preço</th>
-                  <th className="px-3 py-3">Status</th>
-                  <th className="px-4 py-3 text-right">Ações</th>
+                  <th className="px-3 py-3">Peça / Descrição</th>
+                  <th className="px-2.5 py-3">Categoria</th>
+                  <th className="px-2.5 py-3">Tam.</th>
+                  <th className="px-2.5 py-3">Localização</th>
+                  <th className="px-2.5 py-3">Preço</th>
+                  <th className="px-2.5 py-3">Status</th>
+                  <th className="px-3 py-3 text-right">Ações</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-stone-100 dark:divide-zinc-800">
@@ -278,20 +278,20 @@ export const ProductList: React.FC<ProductListProps> = ({
                   const loc = locationMap.get(p.storage_location_id);
                   return (
                     <tr key={p.id} className="hover:bg-stone-50 dark:hover:bg-zinc-800/50 transition">
-                      <td className="px-4 py-3">
-                        <div className="font-semibold text-stone-900 dark:text-zinc-100">{p.name}</div>
-                        {p.notes && <div className="text-[11px] text-stone-600 dark:text-zinc-400 truncate max-w-xs">{p.notes}</div>}
-                      </td>
-                      <td className="px-3 py-3 text-stone-600 dark:text-zinc-300">{p.category}</td>
-                      <td className="px-3 py-3 font-medium text-stone-700 dark:text-zinc-200">{p.size}</td>
                       <td className="px-3 py-3">
+                        <div className="font-semibold text-stone-900 dark:text-zinc-100">{p.name}</div>
+                        {p.notes && <div className="text-[11px] text-stone-600 dark:text-zinc-400 truncate max-w-[160px] xl:max-w-xs">{p.notes}</div>}
+                      </td>
+                      <td className="px-2.5 py-3 text-stone-600 dark:text-zinc-300">{p.category}</td>
+                      <td className="px-2.5 py-3 font-medium text-stone-700 dark:text-zinc-200">{p.size}</td>
+                      <td className="px-2.5 py-3">
                         <LocationBadge location={loc} />
                       </td>
-                      <td className="px-3 py-3 font-bold text-stone-900 dark:text-zinc-100">
+                      <td className="px-2.5 py-3 font-bold text-stone-900 dark:text-zinc-100 whitespace-nowrap">
                         {formatCurrency(p.sale_price)}
                       </td>
-                      <td className="px-3 py-3">{getStatusBadge(p.status)}</td>
-                      <td className="px-4 py-3 text-right">
+                      <td className="px-2.5 py-3">{getStatusBadge(p.status)}</td>
+                      <td className="px-3 py-3 text-right">
                         <div className="flex items-center justify-end gap-1">
                           <button
                             onClick={() => {

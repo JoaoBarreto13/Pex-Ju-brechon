@@ -43,16 +43,16 @@ export const FinancialSummary: React.FC<FinancialSummaryProps> = ({
     <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="rounded-2xl border border-pink-200/60 bg-white/75 px-5 py-4 backdrop-blur-sm shadow-xs">
+        <div className="rounded-2xl border border-pink-200/60 bg-white/75 px-5 py-4 backdrop-blur-sm shadow-xs dark:border-pink-500/20 dark:bg-zinc-900/80">
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl font-bold tracking-tight text-stone-900">
+            <h1 className="text-2xl font-bold tracking-tight text-stone-900 dark:text-zinc-100">
               Controle Financeiro
             </h1>
-            <span className="rounded-full bg-pink-100 px-2.5 py-0.5 text-xs font-semibold text-pink-800">
+            <span className="rounded-full bg-pink-100 px-2.5 py-0.5 text-xs font-semibold text-pink-800 dark:bg-pink-500/15 dark:border dark:border-pink-500/30 dark:text-pink-300">
               Gestão Simplificada
             </span>
           </div>
-          <p className="mt-1 text-sm font-medium text-zinc-800">
+          <p className="mt-1 text-sm font-medium text-zinc-800 dark:text-zinc-300">
             Acompanhe o faturamento com vendas de sacolinhas, despesas operacionais e a meta mensal.
           </p>
         </div>
@@ -60,7 +60,7 @@ export const FinancialSummary: React.FC<FinancialSummaryProps> = ({
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsGoalModalOpen(true)}
-            className="inline-flex items-center gap-1.5 rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-stone-700 hover:bg-stone-50 shadow-xs dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-750"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-stone-200 bg-white px-3.5 py-2.5 text-xs font-semibold text-stone-700 hover:bg-stone-50 shadow-xs dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
           >
             <Target className="h-3.5 w-3.5 text-pink-600 dark:text-pink-400" />
             <span>Ajustar Meta</span>
@@ -234,7 +234,7 @@ export const FinancialSummary: React.FC<FinancialSummaryProps> = ({
             ) : (
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold uppercase text-stone-500 dark:border-zinc-800 dark:bg-zinc-850/80 dark:text-zinc-400">
+                  <thead className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold uppercase text-stone-500 dark:border-zinc-800 dark:bg-zinc-800/70 dark:text-zinc-400">
                     <tr>
                       <th className="px-4 py-3">Data</th>
                       <th className="px-3 py-3">Cliente</th>
@@ -277,7 +277,7 @@ export const FinancialSummary: React.FC<FinancialSummaryProps> = ({
             ) : (
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
-                  <thead className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold uppercase text-stone-500 dark:border-zinc-800 dark:bg-zinc-850/80 dark:text-zinc-400">
+                  <thead className="border-b border-stone-200 bg-stone-50 text-[11px] font-bold uppercase text-stone-500 dark:border-zinc-800 dark:bg-zinc-800/70 dark:text-zinc-400">
                     <tr>
                       <th className="px-4 py-3">Data</th>
                       <th className="px-3 py-3">Descrição da Despesa</th>

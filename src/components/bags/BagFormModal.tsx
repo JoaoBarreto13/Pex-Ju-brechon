@@ -133,7 +133,7 @@ export const BagFormModal: React.FC<BagFormModalProps> = ({
               </select>
             </div>
           ) : (
-            <div className="space-y-3 rounded-xl border border-stone-200 bg-stone-50 p-4 dark:border-zinc-750 dark:bg-zinc-850">
+            <div className="space-y-3 rounded-xl border border-stone-200 bg-stone-50 p-4 dark:border-zinc-700 dark:bg-zinc-800/60">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold text-stone-800 dark:text-zinc-200">Dados da Nova Cliente:</span>
                 <button

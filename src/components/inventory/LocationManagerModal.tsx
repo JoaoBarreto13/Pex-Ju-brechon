@@ -145,7 +145,7 @@ export const LocationManagerModal: React.FC<LocationManagerModalProps> = ({
           </div>
         </div>
 
-        <div className="flex justify-end border-t border-stone-100 bg-stone-50 px-6 py-3 dark:border-zinc-800 dark:bg-zinc-850/80">
+        <div className="flex justify-end border-t border-stone-100 bg-stone-50 px-6 py-3 dark:border-zinc-800 dark:bg-zinc-800/70">
           <button
             onClick={onClose}
             className="rounded-xl bg-stone-800 px-4 py-2 text-xs font-semibold text-white hover:bg-stone-900 dark:bg-zinc-700 dark:hover:bg-zinc-600"

@@ -107,7 +107,7 @@ export const BagDetailModal: React.FC<BagDetailModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-stone-900/50 p-4 backdrop-blur-xs dark:bg-black/75">
       <div className="flex max-h-[90vh] w-full max-w-2xl flex-col rounded-2xl bg-white shadow-2xl border border-stone-200 overflow-hidden dark:bg-zinc-900 dark:border-zinc-800">
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-stone-100 bg-stone-50 px-6 py-4 dark:border-zinc-800 dark:bg-zinc-850/80">
+        <div className="flex items-center justify-between border-b border-stone-100 bg-stone-50 px-6 py-4 dark:border-zinc-800 dark:bg-zinc-800/70">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-pink-500 text-white shadow-xs">
               <ShoppingBag className="h-5 w-5" />
@@ -151,7 +151,7 @@ export const BagDetailModal: React.FC<BagDetailModalProps> = ({
             <div className="flex items-center gap-2">
               <button
                 onClick={handleCopyReceipt}
-                className="inline-flex items-center gap-1 rounded-lg border border-stone-200 bg-white px-2.5 py-1 text-xs font-medium text-stone-700 hover:bg-stone-50 shadow-xs dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-750"
+                className="inline-flex items-center gap-1 rounded-lg border border-stone-200 bg-white px-2.5 py-1 text-xs font-medium text-stone-700 hover:bg-stone-50 shadow-xs dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
               >
                 {copiedReceipt ? (
                   <>
@@ -187,7 +187,7 @@ export const BagDetailModal: React.FC<BagDetailModalProps> = ({
 
           {/* Adicionar peça à sacolinha */}
           {bag.status !== 'shipped' && (
-            <div className="rounded-xl border border-stone-200 bg-stone-50 p-4 dark:border-zinc-800 dark:bg-zinc-850/60">
+            <div className="rounded-xl border border-stone-200 bg-stone-50 p-4 dark:border-zinc-800 dark:bg-zinc-800/60">
               <h3 className="text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-zinc-300 mb-2">
                 Adicionar Peça do Estoque
               </h3>
@@ -300,7 +300,7 @@ export const BagDetailModal: React.FC<BagDetailModalProps> = ({
                       className={`flex-1 rounded-lg py-2 text-xs font-semibold border ${
                         paymentMethod === method
                           ? 'bg-emerald-600 text-white border-emerald-600'
-                          : 'bg-white dark:bg-zinc-800 text-stone-700 dark:text-zinc-200 border-stone-200 dark:border-zinc-700 hover:bg-stone-50 dark:hover:bg-zinc-750'
+                          : 'bg-white dark:bg-zinc-800 text-stone-700 dark:text-zinc-200 border-stone-200 dark:border-zinc-700 hover:bg-stone-50 dark:hover:bg-zinc-700'
                       }`}
                     >
                       {method}
@@ -329,7 +329,7 @@ export const BagDetailModal: React.FC<BagDetailModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between border-t border-stone-100 bg-stone-50 px-6 py-3.5 dark:border-zinc-800 dark:bg-zinc-850/80">
+        <div className="flex items-center justify-between border-t border-stone-100 bg-stone-50 px-6 py-3.5 dark:border-zinc-800 dark:bg-zinc-800/70">
           <div className="text-xs text-stone-500 dark:text-zinc-400">
             {bag.status === 'shipped' ? (
               <span className="font-semibold text-emerald-600 dark:text-emerald-400">✓ Sacolinha finalizada e enviada</span>

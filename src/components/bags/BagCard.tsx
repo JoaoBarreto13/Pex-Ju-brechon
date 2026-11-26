@@ -59,7 +59,7 @@ export const BagCard: React.FC<BagCardProps> = ({ bag, onOpenDetail }) => {
         </div>
 
         {/* Datas de Abertura e Fechamento */}
-        <div className="mt-3.5 grid grid-cols-2 gap-2 rounded-xl bg-stone-50 p-3 text-xs dark:bg-zinc-850/60">
+        <div className="mt-3.5 grid grid-cols-2 gap-2 rounded-xl bg-stone-50 p-3 text-xs dark:bg-zinc-800/60">
           <div>
             <span className="text-[11px] font-semibold uppercase tracking-wider text-stone-500 dark:text-zinc-400">Abertura</span>
             <div className="mt-1 flex items-center gap-1.5 font-semibold text-stone-800 dark:text-zinc-200 whitespace-nowrap">
@@ -91,7 +91,7 @@ export const BagCard: React.FC<BagCardProps> = ({ bag, onOpenDetail }) => {
               {bag.items.map((item) => (
                 <li
                   key={item.id}
-                  className="flex items-center justify-between rounded-lg bg-stone-50 px-2.5 py-1.5 border border-stone-100 dark:bg-zinc-850/60 dark:border-zinc-800/80"
+                  className="flex items-center justify-between rounded-lg bg-stone-50 px-2.5 py-1.5 border border-stone-100 dark:bg-zinc-800/60 dark:border-zinc-800"
                 >
                   <div className="truncate mr-2">
                     <span className="font-medium text-stone-800 dark:text-zinc-200">{item.product_name}</span>

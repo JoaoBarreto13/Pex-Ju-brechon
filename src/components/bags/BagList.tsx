@@ -24,7 +24,9 @@ export const BagList: React.FC<BagListProps> = ({
   const [filter, setFilter] = useState<BagFilter>('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [isCreateOpen, setIsCreateOpen] = useState(false);
-  const [selectedBag, setSelectedBag] = useState<Bag | null>(null);
+  const [selectedBagId, setSelectedBagId] = useState<string | null>(null);
+
+  const selectedBag = selectedBagId ? bags.find((b) => b.id === selectedBagId) || null : null;
 
   const availableProducts = products.filter((p) => p.status === 'available');
 
@@ -146,7 +148,7 @@ export const BagList: React.FC<BagListProps> = ({
             placeholder="Buscar por cliente ou peça..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full rounded-xl border border-stone-200 bg-stone-50 pl-8.5 pr-3 py-1.5 text-xs text-stone-800 placeholder-stone-400 focus:border-pink-500 focus:bg-white focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-500 dark:focus:bg-zinc-850"
+            className="w-full rounded-xl border border-stone-200 bg-stone-50 pl-8.5 pr-3 py-1.5 text-xs text-stone-800 placeholder-stone-400 focus:border-pink-500 focus:bg-white focus:outline-hidden dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-500 dark:focus:bg-zinc-900"
           />
         </div>
       </div>
@@ -179,7 +181,7 @@ export const BagList: React.FC<BagListProps> = ({
             <BagCard
               key={bag.id}
               bag={bag}
-              onOpenDetail={(b) => setSelectedBag(b)}
+              onOpenDetail={(b) => setSelectedBagId(b.id)}
             />
           ))}
         </div>
@@ -196,16 +198,9 @@ export const BagList: React.FC<BagListProps> = ({
       <BagDetailModal
         bag={selectedBag}
         isOpen={!!selectedBag}
-        onClose={() => setSelectedBag(null)}
+        onClose={() => setSelectedBagId(null)}
         availableProducts={availableProducts}
-        onBagUpdated={() => {
-          onRefresh();
-          if (selectedBag) {
-            // Atualiza a sacolinha selecionada no modal
-            const updated = bags.find((b) => b.id === selectedBag.id);
-            setSelectedBag(updated || null);
-          }
-        }}
+        onBagUpdated={onRefresh}
       />
     </div>
   );

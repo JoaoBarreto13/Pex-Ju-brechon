@@ -77,7 +77,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
             </button>
             <button
               onClick={onOpenCreateProduct}
-              className="flex items-center gap-1.5 rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-xs font-semibold text-stone-700 shadow-xs hover:bg-stone-50 transition dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-750"
+              className="flex items-center gap-1.5 rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-xs font-semibold text-stone-700 shadow-xs hover:bg-stone-50 transition dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
             >
               <Plus className="h-4 w-4" />
               <span>Cadastrar Peça</span>
